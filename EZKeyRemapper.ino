@@ -22,6 +22,7 @@
  VERSION HISTORY:
  2014-03-22 0.00 allenh - Created, based on EZKeyDemo source.
  2014-03-26 0.01 allenh - Cleaning up code.
+ 2015-02-14 0.02 allenh - Adding some "const" to make it build with 1.6.0.
  
  TODO:
  * Clean up the user interface, and the code. It's quite messy right now.
@@ -29,7 +30,7 @@
  TOFIX:
  * TODO...
  -----------------------------------------------------------------------------*/
-#define VERSION "0.01"
+#define VERSION "0.02"
 
 #include <avr/pgmspace.h>
 #include <SoftwareSerial.h>
@@ -70,7 +71,7 @@ const char modAltRight[]    PROGMEM = "ALT_RIGHT";
 const char modGUIRight[]    PROGMEM = "GUI_RIGHT";
 
 // Create an array of option codes and pointers to Flash strings, in Flash.
-KeyCodeStruct modifiers[NUM_MODIFIERS] PROGMEM =
+const KeyCodeStruct modifiers[NUM_MODIFIERS] PROGMEM =
 {
   { 
     MODIFIER_NONE,          modNone      }
@@ -219,7 +220,7 @@ const char keyShiftRightStr[]   PROGMEM = "SHIFT_RIGHT";
 const char keyAltRightStr[]     PROGMEM = "ALT_RIGHT";
 const char keyGUIRightStr[]     PROGMEM = "GUI_RIGHT";
 
-KeyCodeStruct keycodes[NUM_KEYCODES] PROGMEM =
+const KeyCodeStruct keycodes[NUM_KEYCODES] PROGMEM =
 {
   { 
     0, keyNoneStr         }
@@ -726,7 +727,7 @@ void showInputConfig(RawHIDKeyboardReportStruct input[])
 
 /*---------------------------------------------------------------------------*/
 
-void showKeyCodes(KeyCodeStruct *items, uint8_t numItems)
+void showKeyCodes(const KeyCodeStruct *items, uint8_t numItems)
 {
   uint8_t i, j, rows, first;
   uint8_t k, len;
