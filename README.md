@@ -2,7 +2,15 @@ EZKeyRemapper
 =============
 
 This program will remap the keys of an Adafruit Bluefruit EZ-Key over a TX/RX
-UART serial connection. 
+UART serial connection.
+
+Simulate this online:
+
+https://wokwi.com/projects/354573642628062209
+
+Video Usage Tutorial:
+
+https://www.youtube.com/watch?v=QHKKOCkYrvM
  
 Hardware:
 
